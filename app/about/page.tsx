@@ -32,7 +32,7 @@ export default function About() {
             <div className="group relative">
               <div className="absolute inset-0 bg-white/5 rounded-3xl blur-xl group-hover:bg-white/10 transition-all duration-500"></div>
               <div className="relative bg-black/40 backdrop-blur-2xl border border-white/10 rounded-3xl p-12 hover:border-white/20 transition-all duration-300">
-                <div className="text-6xl mb-6">🎯</div>
+
                 <h3 className="text-3xl font-bold text-white mb-6">Our Mission</h3>
                 <p className="text-gray-500 leading-relaxed text-lg">
                   To create an inclusive ecosystem where technology enthusiasts can learn,
@@ -45,7 +45,7 @@ export default function About() {
             <div className="group relative">
               <div className="absolute inset-0 bg-white/5 rounded-3xl blur-xl group-hover:bg-white/10 transition-all duration-500"></div>
               <div className="relative bg-black/40 backdrop-blur-2xl border border-white/10 rounded-3xl p-12 hover:border-white/20 transition-all duration-300">
-                <div className="text-6xl mb-6">🚀</div>
+
                 <h3 className="text-3xl font-bold text-white mb-6">Our Vision</h3>
                 <p className="text-gray-500 leading-relaxed text-lg">
                   To be the leading tech community that empowers the next generation of
@@ -64,32 +64,32 @@ export default function About() {
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
-                  icon: '💡',
+                  icon: '',
                   title: 'Innovation',
                   desc: 'We constantly explore new ideas and cutting-edge technologies to stay ahead of the curve.'
                 },
                 {
-                  icon: '🤝',
+                  icon: '',
                   title: 'Collaboration',
                   desc: 'We believe in the power of teamwork and collective intelligence to solve complex problems.'
                 },
                 {
-                  icon: '📚',
+                  icon: '',
                   title: 'Learning',
                   desc: 'We foster a culture of continuous learning and knowledge sharing among our members.'
                 },
                 {
-                  icon: '🌟',
+                  icon: '',
                   title: 'Excellence',
                   desc: 'We maintain high standards in everything we do, from events to projects and beyond.'
                 },
                 {
-                  icon: '🌍',
+                  icon: '',
                   title: 'Impact',
                   desc: 'We focus on creating solutions that make a meaningful difference in our community.'
                 },
                 {
-                  icon: '🔓',
+                  icon: '',
                   title: 'Openness',
                   desc: 'We embrace diversity and welcome everyone who shares our passion for technology.'
                 }

@@ -4,20 +4,19 @@ import TiltedCard from '../../components/TiltedCard';
 
 export default function Team() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  type TeamName = 'Technical' | 'Design' | 'Marketing' | 'Events' | 'Editorial' | 'PR';
+  type TeamName = 'Technical' | 'Social Media' | 'PR & Marketing' | 'Event Management' | 'Creative';
   const [activeTeam, setActiveTeam] = useState<TeamName>('Technical');
 
   const teams: TeamName[] = [
-    'Technical', 'Design', 'Marketing', 'Events', 'Editorial', 'PR'
+    'Technical', 'Social Media', 'PR & Marketing', 'Event Management', 'Creative'
   ];
 
   const coreMembers: Record<TeamName, string[]> = {
-    Technical: ['John Doe', 'Jane Smith', 'Mike Brown', 'Sarah Wilson'],
-    Design: ['Emily Davis', 'Chris Lee', 'Pat Taylor', 'Sam White'],
-    Marketing: ['Alex Jones', 'Katie Clark', 'Tom Hall', 'Lisa King'],
-    Events: ['David Miller', 'Amy Scott', 'James Green', 'Rachel Adams'],
-    Editorial: ['Sophie Turner', 'Ryan Baker', 'Chloe Hill', 'Ben Cook'],
-    PR: ['Olivia Martin', 'Daniel Young', 'Grace Wright', 'Henry Walker']
+    Technical: ['', '', '', ''],
+    'Social Media': ['', '', '', ''],
+    'PR & Marketing': ['', '', '', ''],
+    'Event Management': ['', '', '', ''],
+    Creative: ['', '', '', '']
   };
 
   return (
@@ -32,31 +31,78 @@ export default function Team() {
         <div className="relative z-10 max-w-7xl mx-auto space-y-24">
 
           {/* Section 1: Faculty Coordinator */}
-          <div className="flex flex-col items-center justify-center">
-            <h2 className="text-3xl font-bold mb-12 text-gray-400 tracking-widest uppercase text-sm">Faculty Coordinator</h2>
-            <div className="w-[300px] h-[400px]">
-              <TiltedCard
-                imageSrc="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop"
-                altText="Faculty Coordinator"
+          <div className="text-center mb-12">
+            <h1 className="text-6xl md:text-8xl font-black text-white mb-4 tracking-tighter">
+              Faculty <span className="text-gray-400">Coordinator</span>
+            </h1>
+          </div>
 
-                containerHeight="400px"
-                containerWidth="300px"
-                imageHeight="400px"
-                imageWidth="300px"
+          <div className="grid md:grid-cols-2 gap-12 justify-items-center max-w-4xl mx-auto">
+            {/* First Faculty Coordinator Card */}
+            <div className="w-[320px] h-[320px]">
+              <TiltedCard
+                imageSrc="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop&crop=faces"
+                altText="Faculty Coordinator"
+                containerHeight="320px"
+                containerWidth="320px"
+                imageHeight="320px"
+                imageWidth="320px"
                 rotateAmplitude={12}
                 scaleOnHover={1.05}
                 showMobileWarning={false}
                 showTooltip={false}
                 displayOverlayContent={true}
                 overlayContent={
-                  <div className="absolute bottom-0 left-0 p-6 w-full bg-gradient-to-t from-black/80 to-transparent">
-                    <h3 className="text-xl font-bold text-white">Dr. Alan Grant</h3>
-                    <p className="text-gray-300 text-sm">Faculty Coordinator</p>
+                  <div
+                    className="relative rounded-[15px] overflow-hidden"
+                    style={{ width: '320px', height: '320px' }}
+                  >
+                    <div className="absolute bottom-0 left-0 w-full px-6 py-6 bg-gradient-to-t from-black/90 via-black/70 to-transparent text-center">
+                      <h3 className="text-xl font-bold text-white mb-1">
+                        Ms.Anjali Malik
+                      </h3>
+                      <p className="text-xs uppercase tracking-widest text-green-400 font-medium">
+                        Faculty Coordinator
+                      </p>
+                    </div>
+                  </div>
+                }
+              />
+            </div>
+
+            {/* Second Faculty Coordinator Card */}
+            <div className="w-[320px] h-[320px]">
+              <TiltedCard
+                imageSrc="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop&crop=faces"
+                altText="Faculty Coordinator"
+                containerHeight="320px"
+                containerWidth="320px"
+                imageHeight="320px"
+                imageWidth="320px"
+                rotateAmplitude={12}
+                scaleOnHover={1.05}
+                showMobileWarning={false}
+                showTooltip={false}
+                displayOverlayContent={true}
+                overlayContent={
+                  <div
+                    className="relative rounded-[15px] overflow-hidden"
+                    style={{ width: '320px', height: '320px' }}
+                  >
+                    <div className="absolute bottom-0 left-0 w-full px-6 py-6 bg-gradient-to-t from-black/90 via-black/70 to-transparent text-center">
+                      <h3 className="text-xl font-bold text-white mb-1">
+                        Dr.Karuna
+                      </h3>
+                      <p className="text-xs uppercase tracking-widest text-green-400 font-medium">
+                        Faculty Coordinator
+                      </p>
+                    </div>
                   </div>
                 }
               />
             </div>
           </div>
+
 
           {/* Section 2: Title */}
           <div className="text-center">
@@ -70,46 +116,56 @@ export default function Team() {
 
           {/* Section 3: President & VP */}
           <div className="grid md:grid-cols-2 gap-12 justify-items-center max-w-4xl mx-auto">
-            <div className="w-[300px] h-[400px]">
+            <div className="w-[320px] h-[320px]">
               <TiltedCard
-                imageSrc="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop"
+                imageSrc="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop&crop=faces"
                 altText="President"
 
-                containerHeight="400px"
-                containerWidth="300px"
-                imageHeight="400px"
-                imageWidth="300px"
+                containerHeight="320px"
+                containerWidth="320px"
+                imageHeight="320px"
+                imageWidth="320px"
                 rotateAmplitude={12}
                 scaleOnHover={1.05}
                 showMobileWarning={false}
                 showTooltip={false}
                 displayOverlayContent={true}
                 overlayContent={
-                  <div className="absolute bottom-0 left-0 p-6 w-full bg-gradient-to-t from-black/80 to-transparent">
-                    <h3 className="text-xl font-bold text-white">Alex Johnson</h3>
-                    <p className="text-gray-300 text-sm">President</p>
+                  <div
+                    className="relative rounded-[15px] overflow-hidden"
+                    style={{ width: '320px', height: '320px' }}
+                  >
+                    <div className="absolute bottom-0 left-0 p-6 w-full bg-gradient-to-t from-black/90 via-black/70 to-transparent">
+                      <h3 className="text-xl font-bold text-white mb-1">Sahil Raj Dubey</h3>
+                      <p className="text-xs uppercase tracking-widest text-gray-400 font-medium">President</p>
+                    </div>
                   </div>
                 }
               />
             </div>
-            <div className="w-[300px] h-[400px]">
+            <div className="w-[320px] h-[320px]">
               <TiltedCard
-                imageSrc="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop"
+                imageSrc="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop&crop=faces"
                 altText="Vice President"
 
-                containerHeight="400px"
-                containerWidth="300px"
-                imageHeight="400px"
-                imageWidth="300px"
+                containerHeight="320px"
+                containerWidth="320px"
+                imageHeight="320px"
+                imageWidth="320px"
                 rotateAmplitude={12}
                 scaleOnHover={1.05}
                 showMobileWarning={false}
                 showTooltip={false}
                 displayOverlayContent={true}
                 overlayContent={
-                  <div className="absolute bottom-0 left-0 p-6 w-full bg-gradient-to-t from-black/80 to-transparent">
-                    <h3 className="text-xl font-bold text-white">Sarah Chen</h3>
-                    <p className="text-gray-300 text-sm">Vice President</p>
+                  <div
+                    className="relative rounded-[15px] overflow-hidden"
+                    style={{ width: '320px', height: '320px' }}
+                  >
+                    <div className="absolute bottom-0 left-0 p-6 w-full bg-gradient-to-t from-black/90 via-black/70 to-transparent">
+                      <h3 className="text-xl font-bold text-white mb-1">Ayaan Mirza Baig</h3>
+                      <p className="text-xs uppercase tracking-widest text-gray-400 font-medium">Vice President</p>
+                    </div>
                   </div>
                 }
               />
@@ -119,31 +175,36 @@ export default function Team() {
           {/* Section 4: Leads (2 rows of 3) */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 justify-items-center max-w-6xl mx-auto">
             {[
-              { name: 'Michael Brown', role: 'Technical Lead', img: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7' },
-              { name: 'Emily Davis', role: 'Design Lead', img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956' },
-              { name: 'David Wilson', role: 'Events Lead', img: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d' },
-              { name: 'Lisa Zhang', role: 'Marketing Lead', img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb' },
-              { name: 'James Miller', role: 'Editorial Lead', img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e' },
-              { name: 'Rachel Green', role: 'PR Lead', img: 'https://images.unsplash.com/photo-1554151228-14d9def656ec' },
+              { name: 'Ayush Dwivedi', role: 'Technical Lead', img: '/tech-lead.jpg' },
+              { name: 'Pratik Singh', role: 'Social Media Lead', img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956' },
+              { name: 'Rashi Gupta ', role: 'PR and Marketing Lead', img: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d' },
+              { name: 'Anushka Sharma', role: 'event management Lead', img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb' },
+              { name: 'Shikha Sharma', role: 'Creative Lead', img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e' },
+
             ].map((lead, i) => (
-              <div key={i} className="w-[280px] h-[350px]">
+              <div key={i} className="w-[320px] h-[320px]">
                 <TiltedCard
-                  imageSrc={`${lead.img}?q=80&w=800&auto=format&fit=crop`}
+                  imageSrc={`${lead.img}?q=80&w=800&auto=format&fit=crop&crop=faces`}
                   altText={lead.name}
 
-                  containerHeight="350px"
-                  containerWidth="280px"
-                  imageHeight="350px"
-                  imageWidth="280px"
+                  containerHeight="320px"
+                  containerWidth="320px"
+                  imageHeight="320px"
+                  imageWidth="320px"
                   rotateAmplitude={10}
                   scaleOnHover={1.05}
                   showMobileWarning={false}
                   showTooltip={false}
                   displayOverlayContent={true}
                   overlayContent={
-                    <div className="absolute bottom-0 left-0 p-6 w-full bg-gradient-to-t from-black/80 to-transparent">
-                      <h3 className="text-lg font-bold text-white">{lead.name}</h3>
-                      <p className="text-gray-300 text-xs">{lead.role}</p>
+                    <div
+                      className="relative rounded-[15px] overflow-hidden"
+                      style={{ width: '320px', height: '320px' }}
+                    >
+                      <div className="absolute bottom-0 left-0 p-6 w-full bg-gradient-to-t from-black/90 via-black/70 to-transparent">
+                        <h3 className="text-xl font-bold text-white mb-1">{lead.name}</h3>
+                        <p className="text-xs uppercase tracking-widest text-gray-400 font-medium">{lead.role}</p>
+                      </div>
                     </div>
                   }
                 />
@@ -228,5 +289,6 @@ export default function Team() {
         </div>
       )}
     </div>
+
   );
 }

@@ -62,12 +62,12 @@ export default function Navbar() {
           </div>
 
           {/* CTA Button */}
-          <button className="hidden md:block relative group">
+          <Link href="/register" className="hidden md:block relative group">
             <div className="absolute inset-0 bg-white/10 rounded-xl blur-lg group-hover:blur-xl transition-all duration-300"></div>
             <div className="relative px-6 py-2.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white font-medium transform group-hover:scale-105 group-hover:bg-white/15 transition-all duration-300">
-              Join Us
+              Apply Now
             </div>
-          </button>
+          </Link>
 
           {/* Mobile Menu Button */}
           <button className="md:hidden text-white p-2 hover:bg-white/5 rounded-lg transition-colors">
