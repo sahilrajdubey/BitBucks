@@ -32,20 +32,16 @@ export default function Home() {
               shaping the future of technology.
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
-              <button className="group relative px-10 py-5 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl text-white font-semibold text-lg hover:bg-white/15 transition-all duration-300 transform hover:scale-105">
+            {/* CTA Button */}
+            <div className="flex items-center justify-center pt-8">
+              <Link href="/about" className="group relative px-10 py-5 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl text-white font-semibold text-lg hover:bg-white/15 transition-all duration-300 transform hover:scale-105">
                 <span className="flex items-center">
                   Get Started
                   <svg className="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </span>
-              </button>
-
-              <button className="group px-10 py-5 bg-transparent border-2 border-white/10 rounded-2xl text-gray-400 font-semibold text-lg hover:border-white/20 hover:text-white transition-all duration-300">
-                Learn More
-              </button>
+              </Link>
             </div>
           </div>
         </div>

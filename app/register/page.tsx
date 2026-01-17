@@ -96,7 +96,7 @@ export default function Register() {
 
     return (
         <div className="min-h-screen bg-black text-white">
-            <section className="relative min-h-screen pt-32 pb-20 px-6 lg:px-8">
+            <section className="relative min-h-screen pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6 lg:px-8">
                 {/* Background Elements */}
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:100px_100px]"></div>
                 <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-white/10 rounded-full blur-3xl opacity-50"></div>
@@ -104,11 +104,11 @@ export default function Register() {
 
                 <div className="relative z-10 max-w-4xl mx-auto">
                     {/* Title */}
-                    <div className="text-center mb-12">
-                        <h1 className="text-6xl md:text-8xl font-black text-white mb-4 tracking-tighter">
+                    <div className="text-center mb-8 sm:mb-12">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-white mb-3 sm:mb-4 tracking-tighter px-2">
                             Recruitment <span className="text-gray-400">Form</span>
                         </h1>
-                        <p className="text-xl text-gray-500 max-w-2xl mx-auto font-light">
+                        <p className="text-base sm:text-lg md:text-xl text-gray-500 max-w-2xl mx-auto font-light px-4">
                             Join our team and be part of something amazing.
                         </p>
                     </div>
@@ -124,11 +124,11 @@ export default function Register() {
                     )}
 
                     {/* Form */}
-                    <div className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl p-8 md:p-12">
-                        <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl p-4 sm:p-6 md:p-8 lg:p-12">
+                        <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
                             {/* Full Name */}
                             <div>
-                                <label htmlFor="fullName" className="block text-sm font-medium text-gray-400 mb-2">
+                                <label htmlFor="fullName" className="block text-sm sm:text-base font-medium text-gray-400 mb-2">
                                     Full Name *
                                 </label>
                                 <input
@@ -138,14 +138,14 @@ export default function Register() {
                                     required
                                     value={formData.fullName}
                                     onChange={handleChange}
-                                    className="w-full px-4 py-3 bg-white/10 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-white/30 transition-colors"
+                                    className="w-full px-4 py-3 sm:py-3.5 bg-white/10 border border-white/10 rounded-xl text-white text-base placeholder-gray-500 focus:outline-none focus:border-white/30 transition-colors"
                                     placeholder="Enter your full name"
                                 />
                             </div>
 
                             {/* Registration Number */}
                             <div>
-                                <label htmlFor="registrationNumber" className="block text-sm font-medium text-gray-400 mb-2">
+                                <label htmlFor="registrationNumber" className="block text-sm sm:text-base font-medium text-gray-400 mb-2">
                                     Registration Number *
                                 </label>
                                 <input
@@ -155,7 +155,7 @@ export default function Register() {
                                     required
                                     value={formData.registrationNumber}
                                     onChange={handleChange}
-                                    className="w-full px-4 py-3 bg-white/10 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-white/30 transition-colors"
+                                    className="w-full px-4 py-3 sm:py-3.5 bg-white/10 border border-white/10 rounded-xl text-white text-base placeholder-gray-500 focus:outline-none focus:border-white/30 transition-colors"
                                     placeholder="Enter your registration number"
                                 />
                             </div>
@@ -212,10 +212,10 @@ export default function Register() {
                             </div>
 
                             {/* Year and Section - Grid */}
-                            <div className="grid md:grid-cols-2 gap-6">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
                                 {/* Year */}
                                 <div>
-                                    <label htmlFor="year" className="block text-sm font-medium text-gray-400 mb-2">
+                                    <label htmlFor="year" className="block text-sm sm:text-base font-medium text-gray-400 mb-2">
                                         Year *
                                     </label>
                                     <select
@@ -224,7 +224,7 @@ export default function Register() {
                                         required
                                         value={formData.year}
                                         onChange={handleChange}
-                                        className="w-full px-4 py-3 bg-white/10 border border-white/10 rounded-xl text-white focus:outline-none focus:border-white/30 transition-colors"
+                                        className="w-full px-4 py-3 sm:py-3.5 bg-white/10 border border-white/10 rounded-xl text-white text-base focus:outline-none focus:border-white/30 transition-colors"
                                     >
                                         <option value="" className="bg-black">Select year</option>
                                         <option value="1st" className="bg-black">1st Year</option>
@@ -280,7 +280,7 @@ export default function Register() {
                                     required
                                     value={formData.preferredDomain}
                                     onChange={handleChange}
-                                    className="w-full px-4 py-3 bg-white/10 border border-white/10 rounded-xl text-white focus:outline-none focus:border-white/30 transition-colors"
+                                    className="w-full px-4 py-3 sm:py-3.5 bg-white/10 border border-white/10 rounded-xl text-white text-base focus:outline-none focus:border-white/30 transition-colors"
                                 >
                                     <option value="" className="bg-black">Select preferred domain</option>
                                     <option value="Technical" className="bg-black">Technical</option>
