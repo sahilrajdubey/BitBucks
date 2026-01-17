@@ -1,7 +1,10 @@
 'use client';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { supabase } from '../../lib/supabase';
 
 export default function Register() {
+    const router = useRouter();
     const [formData, setFormData] = useState({
         fullName: '',
         registrationNumber: '',
@@ -18,6 +21,11 @@ export default function Register() {
 
     const [wordCount, setWordCount] = useState(0);
     const maxWords = 200;
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<{
+        type: 'success' | 'error' | null;
+        message: string;
+    }>({ type: null, message: '' });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
@@ -33,10 +41,57 @@ export default function Register() {
         }
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
-        // Add your form submission logic here
+        setIsSubmitting(true);
+        setSubmitStatus({ type: null, message: '' });
+
+        try {
+            // Insert data into Supabase
+            const { data, error } = await supabase
+                .from('student_registrations')
+                .insert([
+                    {
+                        full_name: formData.fullName,
+                        registration_number: formData.registrationNumber,
+                        college_id: formData.collegeId,
+                        email: formData.email,
+                        phone: formData.phone,
+                        year: formData.year,
+                        section: formData.section,
+                        branch: formData.branch,
+                        preferred_domain: formData.preferredDomain,
+                        resume_link: formData.resumeLink,
+                        why_hire_you: formData.whyHireYou
+                    }
+                ])
+                .select();
+
+            if (error) {
+                throw error;
+            }
+
+            // Success - Redirect to success page
+            router.push('/register/success');
+
+        } catch (error: any) {
+            console.error('Error submitting form:', error);
+
+            // Handle specific error cases
+            if (error.code === '23505') {
+                setSubmitStatus({
+                    type: 'error',
+                    message: 'This email is already registered. Please use a different email.'
+                });
+            } else {
+                setSubmitStatus({
+                    type: 'error',
+                    message: error.message || 'Failed to submit registration. Please try again.'
+                });
+            }
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -57,6 +112,16 @@ export default function Register() {
                             Join our team and be part of something amazing.
                         </p>
                     </div>
+
+                    {/* Success/Error Messages */}
+                    {submitStatus.type && (
+                        <div className={`mb-6 p-4 rounded-xl border ${submitStatus.type === 'success'
+                            ? 'bg-green-500/10 border-green-500/30 text-green-400'
+                            : 'bg-red-500/10 border-red-500/30 text-red-400'
+                            }`}>
+                            <p className="text-sm font-medium">{submitStatus.message}</p>
+                        </div>
+                    )}
 
                     {/* Form */}
                     <div className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl p-8 md:p-12">
@@ -267,9 +332,13 @@ export default function Register() {
                             <div className="pt-6">
                                 <button
                                     type="submit"
-                                    className="w-full px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white font-bold text-lg hover:bg-white/15 hover:scale-[1.02] transition-all duration-300"
+                                    disabled={isSubmitting}
+                                    className={`w-full px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white font-bold text-lg transition-all duration-300 ${isSubmitting
+                                        ? 'opacity-50 cursor-not-allowed'
+                                        : 'hover:bg-white/15 hover:scale-[1.02]'
+                                        }`}
                                 >
-                                    Submit Application
+                                    {isSubmitting ? 'Submitting...' : 'Submit Application'}
                                 </button>
                             </div>
                         </form>

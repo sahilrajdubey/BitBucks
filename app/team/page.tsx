@@ -41,7 +41,7 @@ export default function Team() {
             {/* First Faculty Coordinator Card */}
             <div className="w-[320px] h-[320px]">
               <TiltedCard
-                imageSrc="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop&crop=faces"
+                imageSrc="/anjalimalik.jpg"
                 altText="Faculty Coordinator"
                 containerHeight="320px"
                 containerWidth="320px"
@@ -73,7 +73,7 @@ export default function Team() {
             {/* Second Faculty Coordinator Card */}
             <div className="w-[320px] h-[320px]">
               <TiltedCard
-                imageSrc="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop&crop=faces"
+                imageSrc=""
                 altText="Faculty Coordinator"
                 containerHeight="320px"
                 containerWidth="320px"
@@ -91,7 +91,7 @@ export default function Team() {
                   >
                     <div className="absolute bottom-0 left-0 w-full px-6 py-6 bg-gradient-to-t from-black/90 via-black/70 to-transparent text-center">
                       <h3 className="text-xl font-bold text-white mb-1">
-                        Dr.Karuna
+                        Dr.Karuna Gupta
                       </h3>
                       <p className="text-xs uppercase tracking-widest text-green-400 font-medium">
                         Faculty Coordinator
@@ -118,7 +118,7 @@ export default function Team() {
           <div className="grid md:grid-cols-2 gap-12 justify-items-center max-w-4xl mx-auto">
             <div className="w-[320px] h-[320px]">
               <TiltedCard
-                imageSrc="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop&crop=faces"
+                imageSrc="/sahilrajdubey.png"
                 altText="President"
 
                 containerHeight="320px"
@@ -145,7 +145,7 @@ export default function Team() {
             </div>
             <div className="w-[320px] h-[320px]">
               <TiltedCard
-                imageSrc="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop&crop=faces"
+                imageSrc="/ayaanmirzabaig.jpg"
                 altText="Vice President"
 
                 containerHeight="320px"
@@ -176,10 +176,10 @@ export default function Team() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 justify-items-center max-w-6xl mx-auto">
             {[
               { name: 'Ayush Dwivedi', role: 'Technical Lead', img: '/tech-lead.jpg' },
-              { name: 'Pratik Singh', role: 'Social Media Lead', img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956' },
-              { name: 'Rashi Gupta ', role: 'PR and Marketing Lead', img: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d' },
-              { name: 'Anushka Sharma', role: 'event management Lead', img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb' },
-              { name: 'Shikha Sharma', role: 'Creative Lead', img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e' },
+              { name: 'Pratik Raj', role: 'Social Media Lead', img: '' },
+              { name: 'Rashi Gupta ', role: 'PR and Marketing Lead', img: '/rashigupta.jpg' },
+              { name: 'Anushka Sharma', role: 'event management Lead', img: '' },
+              { name: 'Shikha Sharma', role: 'Creative Lead', img: '/shikhasharma.png' },
 
             ].map((lead, i) => (
               <div key={i} className="w-[320px] h-[320px]">
