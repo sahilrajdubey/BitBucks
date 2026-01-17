@@ -2,14 +2,21 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 
 const useMedia = (queries, values, defaultValue) => {
-  const get = () => values[queries.findIndex(q => matchMedia(q).matches)] ?? defaultValue;
-
-  const [value, setValue] = useState(get);
+  const [value, setValue] = useState(defaultValue);
 
   useEffect(() => {
-    const handler = () => setValue(get);
-    queries.forEach(q => matchMedia(q).addEventListener('change', handler));
-    return () => queries.forEach(q => matchMedia(q).removeEventListener('change', handler));
+    if (typeof window === 'undefined') return;
+
+    const get = () => {
+      const index = queries.findIndex(q => window.matchMedia(q).matches);
+      return values[index] ?? defaultValue;
+    };
+
+    setValue(get());
+
+    const handler = () => setValue(get());
+    queries.forEach(q => window.matchMedia(q).addEventListener('change', handler));
+    return () => queries.forEach(q => window.matchMedia(q).removeEventListener('change', handler));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [queries]);
 

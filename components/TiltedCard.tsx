@@ -1,8 +1,17 @@
-import { useRef, useState, ReactNode } from 'react';
-import { motion, useMotionValue, useSpring, MotionValue } from 'motion/react';
+'use client';
+import { useRef, useState, type ReactNode } from 'react';
+import { motion, useMotionValue, useSpring } from 'motion/react';
+
+const springValues = {
+    damping: 30,
+    stiffness: 100,
+    mass: 2
+};
 
 interface TiltedCardProps {
     imageSrc: string;
+    name?: string;
+    role?: string;
     altText?: string;
     captionText?: string;
     containerHeight?: string;
@@ -15,18 +24,12 @@ interface TiltedCardProps {
     showTooltip?: boolean;
     overlayContent?: ReactNode;
     displayOverlayContent?: boolean;
-    name?: string;
-    role?: string;
 }
-
-const springValues = {
-    damping: 30,
-    stiffness: 100,
-    mass: 2
-};
 
 export default function TiltedCard({
     imageSrc,
+    name,
+    role,
     altText = 'Tilted card image',
     captionText = '',
     containerHeight = '300px',
@@ -36,11 +39,9 @@ export default function TiltedCard({
     scaleOnHover = 1.1,
     rotateAmplitude = 14,
     showMobileWarning = true,
-    showTooltip = false,
+    showTooltip = true,
     overlayContent = null,
-    displayOverlayContent = false,
-    name = '',
-    role = ''
+    displayOverlayContent = false
 }: TiltedCardProps) {
     const ref = useRef<HTMLElement>(null);
     const x = useMotionValue(0);
@@ -119,45 +120,39 @@ export default function TiltedCard({
                     scale
                 }}
             >
-                <motion.img
-                    src={imageSrc}
-                    alt={altText}
-                    className="absolute top-0 left-0 object-cover rounded-[15px] will-change-transform [transform:translateZ(0)]"
-                    style={{
-                        width: imageWidth,
-                        height: imageHeight
-                    }}
-                />
-
-                {/* Default name and role display */}
-                {(name || role) && (
-                    <motion.div className="absolute top-0 left-0 z-[2] pointer-events-none will-change-transform sm:[transform:translateZ(30px)]"
+                {imageSrc && (
+                    <motion.img
+                        src={imageSrc}
+                        alt={altText}
+                        className="absolute top-0 left-0 object-cover rounded-[15px] will-change-transform [transform:translateZ(0)]"
                         style={{
                             width: imageWidth,
                             height: imageHeight
                         }}
-                    >
-                        <div className="relative rounded-[15px] overflow-hidden pointer-events-none w-full h-full">
-                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60"></div>
-                            <div className="absolute bottom-0 left-0 w-full px-4 sm:px-6 py-4 sm:py-6 text-center z-10">
-                                {name && (
-                                    <h3 className="text-lg sm:text-xl font-bold text-white mb-1 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
-                                        {name}
-                                    </h3>
-                                )}
-                                {role && (
-                                    <p className="text-xs uppercase tracking-widest text-gray-400 font-medium drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
-                                        {role}
-                                    </p>
-                                )}
-                            </div>
-                        </div>
-                    </motion.div>
+                    />
                 )}
 
-                {/* Custom overlay content */}
+                {/* Name and Role Overlay - Always visible */}
+                {(name || role) && (
+                    <div className="absolute top-0 left-0 w-full h-full rounded-[15px] overflow-hidden pointer-events-none [transform:translateZ(20px)]">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60"></div>
+                        <div className="absolute bottom-0 left-0 w-full px-4 sm:px-6 py-4 sm:py-6 text-center z-10">
+                            {name && (
+                                <h3 className="text-lg sm:text-xl font-bold text-white mb-1 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
+                                    {name}
+                                </h3>
+                            )}
+                            {role && (
+                                <p className="text-xs uppercase tracking-widest text-gray-400 font-medium drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
+                                    {role}
+                                </p>
+                            )}
+                        </div>
+                    </div>
+                )}
+
                 {displayOverlayContent && overlayContent && (
-                    <motion.div className="absolute top-0 left-0 z-[2] pointer-events-none will-change-transform sm:[transform:translateZ(30px)]">
+                    <motion.div className="absolute top-0 left-0 z-[2] will-change-transform [transform:translateZ(30px)]">
                         {overlayContent}
                     </motion.div>
                 )}
