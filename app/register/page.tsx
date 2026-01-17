@@ -106,7 +106,7 @@ export default function Register() {
                     {/* Title */}
                     <div className="text-center mb-12">
                         <h1 className="text-6xl md:text-8xl font-black text-white mb-4 tracking-tighter">
-                            Student <span className="text-gray-400">Registration</span>
+                            Recruitment <span className="text-gray-400">Form</span>
                         </h1>
                         <p className="text-xl text-gray-500 max-w-2xl mx-auto font-light">
                             Join our team and be part of something amazing.
