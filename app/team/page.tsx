@@ -23,14 +23,14 @@ export default function Team() {
   return (
     <div className="min-h-screen bg-black text-white relative">
       {/* LetterGlitch Background */}
-        <div className="fixed inset-0 z-0 opacity-30 pointer-events-none">
-          <LetterGlitch
-            glitchSpeed={70}
-            centerVignette={true}
-            outerVignette={false}
-            smooth={true}
-          />
-        </div>
+      <div className="fixed inset-0 z-0 opacity-30 pointer-events-none">
+        <LetterGlitch
+          glitchSpeed={70}
+          centerVignette={true}
+          outerVignette={false}
+          smooth={true}
+        />
+      </div>
 
       <section className="relative min-h-screen pt-32 pb-20 px-6 lg:px-8 z-10">
 
@@ -130,9 +130,9 @@ export default function Team() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 justify-items-center max-w-6xl mx-auto">
             {[
               { name: 'Ayush Dwivedi', role: 'Technical Lead', img: '/tech-lead.jpg' },
-              { name: 'Pratik Raj', role: 'Social Media Lead', img: '' },
+              { name: 'Pratik Raj', role: 'Social Media Lead', img: '/pratikraj.jpeg' },
               { name: 'Rashi Gupta ', role: 'PR and Marketing Lead', img: '/rashigupta.jpg' },
-              { name: 'Anushka Sharma', role: 'event management Lead', img: '' },
+              { name: 'Anushka Sharma', role: 'event management Lead', img: '/anushkasharma.jpeg' },
               { name: 'Shikha Sharma', role: 'Creative Lead', img: '/shikhasharma.png' },
 
             ].map((lead, i) => (
