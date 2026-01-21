@@ -95,14 +95,14 @@ export default function Register() {
     };
 
     return (
-        <div className="min-h-screen bg-black text-white">
-            <section className="relative min-h-screen pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="min-h-screen bg-black text-white overflow-x-hidden">
+            <section className="relative min-h-screen pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
                 {/* Background Elements */}
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:100px_100px]"></div>
-                <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-white/10 rounded-full blur-3xl opacity-50"></div>
-                <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-gray-800/20 rounded-full blur-3xl opacity-50"></div>
+                <div className="absolute top-1/3 left-1/3 w-64 sm:w-96 h-64 sm:h-96 bg-white/10 rounded-full blur-3xl opacity-50"></div>
+                <div className="absolute bottom-1/3 right-1/3 w-64 sm:w-96 h-64 sm:h-96 bg-gray-800/20 rounded-full blur-3xl opacity-50"></div>
 
-                <div className="relative z-10 max-w-4xl mx-auto">
+                <div className="relative z-10 w-full max-w-4xl mx-auto">
                     {/* Title */}
                     <div className="text-center mb-8 sm:mb-12">
                         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-white mb-3 sm:mb-4 tracking-tighter px-2">

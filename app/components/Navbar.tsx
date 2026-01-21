@@ -77,10 +77,10 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* CTA Button */}
-            <Link href="/register" className="hidden md:block relative group">
+            {/* CTA Button - Desktop only */}
+            <Link href="/register" className="hidden lg:block relative group">
               <div className="absolute inset-0 bg-white/10 rounded-xl blur-lg group-hover:blur-xl transition-all duration-300"></div>
-              <div className="relative px-6 py-2.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white font-medium transform group-hover:scale-105 group-hover:bg-white/15 transition-all duration-300">
+              <div className="relative px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white font-medium text-sm sm:text-base transform group-hover:scale-105 group-hover:bg-white/15 transition-all duration-300">
                 Apply Now
               </div>
             </Link>

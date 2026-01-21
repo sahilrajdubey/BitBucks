@@ -21,6 +21,13 @@ export default function Home() {
 
             </div>
 
+            {/* Apply Now Button - Mobile & Tablet only (above heading) */}
+            <div className="lg:hidden mb-8">
+              <Link href="/register" className="inline-block px-8 py-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl text-white font-semibold text-base hover:bg-white/15 transition-all duration-300 transform hover:scale-105">
+                Apply Now
+              </Link>
+            </div>
+
             {/* Main Heading */}
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white leading-none tracking-tighter">
               Welcome to
