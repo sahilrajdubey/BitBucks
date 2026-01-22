@@ -15,21 +15,18 @@ export default function Gallery() {
         </div>
 
         <div className="relative z-10 w-full h-full min-h-[80vh]">
+          {/* Gallery Title */}
+          <div className="text-center mb-16">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-black text-white mb-4 tracking-tighter">
+              Our <span className="text-gray-400">Gallery</span>
+            </h1>
+            <p className="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto font-light">
+              Capturing moments and memories from our journey.
+            </p>
+          </div>
+
           <Masonry
-            items={[
-              { id: 1, img: 'https://images.unsplash.com/photo-1531297461136-82lw8m2m5-unsplash.jpg', height: 400 },
-              { id: 2, img: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b', height: 600 },
-              { id: 3, img: 'https://images.unsplash.com/photo-1518770660439-4636190af475', height: 300 },
-              { id: 4, img: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6', height: 500 },
-              { id: 5, img: 'https://images.unsplash.com/photo-1518773553398-650c184e0bb3', height: 400 },
-              { id: 6, img: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5', height: 550 },
-              { id: 7, img: 'https://images.unsplash.com/photo-1531297461136-82lw8m2m5-unsplash.jpg', height: 400 },
-              { id: 8, img: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b', height: 600 },
-              { id: 9, img: 'https://images.unsplash.com/photo-1518770660439-4636190af475', height: 300 },
-              { id: 10, img: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6', height: 500 },
-              { id: 11, img: 'https://images.unsplash.com/photo-1518773553398-650c184e0bb3', height: 400 },
-              { id: 12, img: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5', height: 550 },
-            ]}
+            items={[]}
           />
         </div>
       </section>
