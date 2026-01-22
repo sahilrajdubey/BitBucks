@@ -65,7 +65,7 @@ export default function Team() {
             {/* Second Faculty Coordinator Card */}
             <div className="w-full max-w-[280px] sm:max-w-[320px] aspect-square mx-auto">
               <TiltedCard
-                imageSrc=""
+                imageSrc="/karunaguptacoordinator.jpg"
                 name="Dr.Karuna Gupta"
                 role="Faculty Coordinator"
                 containerHeight="100%"

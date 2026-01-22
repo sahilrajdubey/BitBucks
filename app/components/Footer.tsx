@@ -7,7 +7,15 @@ export default function Footer() {
     return (
         <footer className="relative z-10 bg-black pt-20 pb-10 border-t border-white/5">
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+                {/* Mobile Only - Apply Now Button */}
+                <div className="md:hidden flex justify-center mb-16">
+                    <Link href="/register" className="w-full max-w-sm px-10 py-5 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl text-white font-semibold text-lg text-center hover:bg-white/15 transition-all duration-300 transform hover:scale-105">
+                        Apply Now
+                    </Link>
+                </div>
+
+                {/* Tablet & Desktop - Full Footer */}
+                <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
                     {/* Brand Column */}
                     <div className="space-y-6">
                         <Link href="/" className="flex items-center space-x-3 group w-fit">
