@@ -9,7 +9,7 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
                 {/* Mobile Only - Apply Now Button */}
                 <div className="md:hidden flex justify-center mb-16">
-                    <Link href="/register" className="w-full max-w-sm px-10 py-5 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl text-white font-semibold text-lg text-center hover:bg-white/15 transition-all duration-300 transform hover:scale-105">
+                    <Link href="/register" className="w-full max-w-sm px-10 py-5 bg-white text-black border border-white/20 rounded-2xl font-semibold text-lg text-center hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
                         Apply Now
                     </Link>
                 </div>

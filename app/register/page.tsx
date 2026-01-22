@@ -160,20 +160,20 @@ export default function Register() {
                                 />
                             </div>
 
-                            {/* College ID */}
+                            {/* College Email ID */}
                             <div>
                                 <label htmlFor="collegeId" className="block text-sm font-medium text-gray-400 mb-2">
-                                    College ID *
+                                    College Email ID *
                                 </label>
                                 <input
-                                    type="text"
+                                    type="email"
                                     id="collegeId"
                                     name="collegeId"
                                     required
                                     value={formData.collegeId}
                                     onChange={handleChange}
                                     className="w-full px-4 py-3 bg-white/10 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-white/30 transition-colors"
-                                    placeholder="Enter your college ID"
+                                    placeholder="Enter your college email ID"
                                 />
                             </div>
 
@@ -190,7 +190,7 @@ export default function Register() {
                                     value={formData.email}
                                     onChange={handleChange}
                                     className="w-full px-4 py-3 bg-white/10 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-white/30 transition-colors"
-                                    placeholder="your.email@example.com"
+                                    placeholder="Enter your personal email id"
                                 />
                             </div>
 
@@ -207,7 +207,7 @@ export default function Register() {
                                     value={formData.phone}
                                     onChange={handleChange}
                                     className="w-full px-4 py-3 bg-white/10 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-white/30 transition-colors"
-                                    placeholder="+91 1234567890"
+                                    placeholder="+91"
                                 />
                             </div>
 
@@ -230,7 +230,6 @@ export default function Register() {
                                         <option value="1st" className="bg-black">1st Year</option>
                                         <option value="2nd" className="bg-black">2nd Year</option>
                                         <option value="3rd" className="bg-black">3rd Year</option>
-                                        <option value="4th" className="bg-black">4th Year</option>
                                     </select>
                                 </div>
 
